@@ -45,7 +45,7 @@ int main(void)
  	RCC_Configuration();
 	GPIO_Configuration();
 	USART_Configuration();
-    	TIM_Configuration();
+  TIM_Configuration();
 	EXTI_Configuration();
 	NVIC_Configuration();
 
@@ -53,20 +53,11 @@ int main(void)
 	
 	while (1)
 	{	
-		/*
 		index++;
 		encoder_count = abs(TIM_GetCounter(TIM3)-30000);
-		*/
 		
 		if(T1Robot.sys_status == SYSTEM_START)	 // he thong dc phep hoat dong
 		{
-			if(T1Robot.edge_status == EDGE_DETECT)
-			{								
-				lazer_dir=!lazer_dir;	
-				Lazer_Run(lazer_dir);
-				T1Robot.edge_status = EDGE_NOTDETECT;
-			}
-		/*
 		//printf("G1_status %d\n\r",T1Robot.G1_working_status);	
 			
 			if(T1Robot.G1_on_T1_status == G1_ON_T1)
@@ -150,7 +141,6 @@ int main(void)
 					}
 				}
 			}
-			*/
 			
 		}
 		
@@ -164,9 +154,6 @@ int main(void)
 			T1Robot.bed_status = BED_NOTDETECT;
 			T1Robot.edge_status = EDGE_DETECT;
 		}
-
-
-
 	}
 }
 
